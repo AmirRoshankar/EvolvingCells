@@ -22,40 +22,68 @@ public class InfoGUI extends JFrame implements ActionListener
 		this.setLayout(new GridLayout(16, 2, 10, 5));
 		for (int i = 0; i < 15; i ++)
 		{
-			textFields.add(new JTextField("10"));
-			
 			switch (i)
 			{
-				case 0:prompts.add(new JLabel("Number of Cells: "));
+				case 0:
+					prompts.add(new JLabel("   Number of Cells: "));
+					textFields.add(new JTextField("5"));
 					break;
-				case 1:prompts.add(new JLabel("Initial Health To Distance: "));
+				case 1:
+					prompts.add(new JLabel("   Initial Health To Distance: "));
+					textFields.add(new JTextField("10"));
 					break;
-				case 2:prompts.add(new JLabel("Distance Per Health: "));
+				case 2:
+					prompts.add(new JLabel("   Distance Per Health: "));
+					textFields.add(new JTextField("2"));
 					break;
-				case 3:prompts.add(new JLabel("Health Per Food: "));
+				case 3:
+					prompts.add(new JLabel("   Health Per Food: "));
+					textFields.add(new JTextField("30"));
 					break;
-				case 4:prompts.add(new JLabel("Maximum Health: "));
+				case 4:
+					prompts.add(new JLabel("   Maximum Health: "));
+					textFields.add(new JTextField("10"));
 					break;
-				case 5:prompts.add(new JLabel("Initial Birth Health: "));
+				case 5:
+					prompts.add(new JLabel("   Initial Birth Health: "));
+					textFields.add(new JTextField("5"));
 					break;
-				case 6:prompts.add(new JLabel("Initial Radius: "));
+				case 6:
+					prompts.add(new JLabel("   Initial Radius: "));
+					textFields.add(new JTextField("5"));
 					break;
-				case 7:prompts.add(new JLabel("Initial Replication Health: "));
+				case 7:
+					prompts.add(new JLabel("   Initial Replication Health: "));
+					textFields.add(new JTextField("10"));
 					break;
-				case 8:prompts.add(new JLabel("Replication Cost: "));
+				case 8:
+					prompts.add(new JLabel("   Replication Cost: "));
+					textFields.add(new JTextField("3"));
 					break;
-				case 9:prompts.add(new JLabel("Initial Resistance to Mutation: "));
-				break;
-				case 10:prompts.add(new JLabel("Cost to Live: "));
-				break;
-				case 11:prompts.add(new JLabel("Food Radius: "));
+				case 9:
+					prompts.add(new JLabel("   Initial Resistance to Mutation: "));
+					textFields.add(new JTextField("1"));
 					break;
-				case 12:prompts.add(new JLabel("Size of map: "));
+				case 10:
+					prompts.add(new JLabel("   Cost to Live: "));
+					textFields.add(new JTextField("1"));
 					break;
-				case 13:prompts.add(new JLabel("Number of Food Pieces to Add: "));
+				case 11:
+					prompts.add(new JLabel("   Food Radius: "));
+					textFields.add(new JTextField("2"));
 					break;
-				case 14:prompts.add(new JLabel("Initial Number of Food Pieces: "));
-				break;
+				case 12:
+					prompts.add(new JLabel("   Size of map: "));
+					textFields.add(new JTextField("400"));
+					break;
+				case 13:
+					prompts.add(new JLabel("   Number of Food Pieces to Add: "));
+					textFields.add(new JTextField("40"));
+					break;
+				case 14:
+					prompts.add(new JLabel("   Initial Number of Food Pieces: "));
+					textFields.add(new JTextField("300"));
+					break;
 			}
 			this.add(prompts.get(i));
 			this.add(textFields.get(i));

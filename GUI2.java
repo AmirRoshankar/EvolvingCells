@@ -21,7 +21,7 @@ public class GUI2 extends JComponent
 		this.map = map;
 		this.cell = cell;
 		
-		this.setSize((int) map.getSize()+100, (int) map.getSize()+100);
+		this.setSize((int) map.getSize(), (int) map.getSize());
 		this.setVisible(true);
 	}
 	public void paint(Graphics g)
@@ -33,7 +33,7 @@ public class GUI2 extends JComponent
 		g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, 
 				RenderingHints.VALUE_ANTIALIAS_ON);
 
-		g2.setPaint(Color.RED);
+		g2.setPaint(new Color (255, 0, 0, 100));
 		
 		//drawing the cell
 		Shape tempC;
@@ -43,10 +43,10 @@ public class GUI2 extends JComponent
 			double cellY = cell.get(i).getY();
 			double cellR = cell.get(i).getR();
 			tempC = new Ellipse2D.Double(cellX-cellR, cellY-cellR, 2*cellR, 2*cellR);
-			g2.draw(tempC);
+			g2.fill(tempC);
 		}
 			
-		g2.setPaint(Color.DARK_GRAY);
+		g2.setPaint(new Color (0, 255, 0, 100));
 		
 		//drawing the food  
 		double fR = map.getFR();
@@ -57,7 +57,7 @@ public class GUI2 extends JComponent
 			double fX = food[0];
 			double fY = food[1];
 			tempF = new Ellipse2D.Double(fX, fY, 2*fR, 2*fR);
-			g2.draw(tempF);
+			g2.fill(tempF);
 		}
 	}
 

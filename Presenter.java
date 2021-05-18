@@ -1,5 +1,6 @@
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.Point;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.io.Console;
@@ -57,13 +58,17 @@ public class Presenter{
 		frame.setSize(gui.getSize());
 		frame.setTitle("The Map");
 		state.setTitle("Current State");
+		state.setLocation(new Point(state.getLocation().x + frame.getWidth(), state.getLocation().y));
 		state.setSize(400,200);
 		JLabel popLabel = new JLabel();
-		popLabel.setText("Population Size: " + cells.size());
+		popLabel.setText("   Population Size: " + cells.size());
+		JLabel foodLabel = new JLabel();
+		popLabel.setText("   Number of Food Particles: " + map.getFCount());
 		JLabel hToDLabel = new JLabel();
-		hToDLabel.setText("Health to Distance Average: N/A");
-		state.setLayout(new GridLayout(2,1));
+		hToDLabel.setText("   Average Energy Spent on Moving: N/A");
+		state.setLayout(new GridLayout(3,1));
 		state.add(popLabel);
+		state.add(foodLabel);
 		state.add(hToDLabel);
 		
 		frame.setVisible(true);
@@ -81,7 +86,8 @@ public class Presenter{
 		while (cells.size()>0)
 		{
 			TimeUnit.MILLISECONDS.sleep(50);
-			popLabel.setText("Population Size: " + cells.size());
+			popLabel.setText("   Population Size: " + cells.size());
+			foodLabel.setText("   Number of Food Particles: " + map.getFCount());
 			
 			double hToDAve = 0;
 
@@ -90,7 +96,7 @@ public class Presenter{
 				hToDAve += cells.get(i).getHToD();
 			}
 			hToDAve /= cells.size();
-			hToDLabel.setText("Health to Distance Average: " + Math.round(hToDAve*100000)/100000.0);
+			hToDLabel.setText("   Average Energy Spent on Moving: " + Math.round(hToDAve*100000)/100000.0);
 
 			
 			for (int i = cells.size()-1; i >= 0; i--)

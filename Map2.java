@@ -45,6 +45,10 @@ public class Map2
 		return f;
 	}
 	
+	public int getFCount() {
+		return f.size();
+	}
+	
 	public ArrayList<Double[]> getT()
 	{
 		return t;
@@ -99,9 +103,6 @@ public class Map2
 				Double[] tempFoodLoc = {newX, newY};
 				f.add(place, tempFoodLoc);
 				// trying to sort the y too seems useless but try if needed
-				
-				
-				
 								
 			}
 		}
