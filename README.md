@@ -1,5 +1,5 @@
 # CellProject
-A simulation of randomly evolving cell in an environment with limited food.
+A simulation of randomly evolving cells in an environment with limited food.
 Here is a short demo:
 
 https://user-images.githubusercontent.com/38186781/118692583-3a11dc00-b7d8-11eb-9811-4f42d3aba93d.mp4
